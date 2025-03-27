@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package server;
+
+service PlateDatector {
+  rpc StreamFrames (stream Frame) returns (stream PlateResponse);
+}
+
+message Frame {
+  bytes image = 1; 
+}
+
+message PlateResponse {
+  string characters = 1;        
+  string plate_type = 2;        
+  string plate_folder = 3;      
+  string full_image_folder = 4; 
+  bytes plate_image = 5;        
+  bytes full_image = 6;        
+  string timestamp = 7;       
+}
