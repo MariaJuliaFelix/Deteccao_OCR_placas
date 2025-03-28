@@ -15,7 +15,7 @@ Este projeto implementa um sistema de **detecção e OCR** (Reconhecimento Ópti
   - Recebe os frames do cliente e realiza a detecção de placas em cada imagem utilizando um modelo treinado.
   - Salva as imagens processadas em pastas específicas:
     - **full frame**: Imagem completa.
-    - **ROI (Região de Interesse)**: Imagem destacando a placa.
+    - **plates (Região de Interesse)**: Imagem destacando a placa.
   
 - **OCR e Validação**:
   - Utiliza o **EasyOCR** para realizar a extração dos caracteres das placas detectadas.
@@ -36,3 +36,42 @@ O **modelo treinado** foi otimizado para detectar placas com alta precisão e re
 - **Protocol Buffers**: Serialização de dados entre o cliente e o servidor.
 - **EasyOCR**: Biblioteca para OCR, usada para extrair os caracteres das placas detectadas.
 - **OpenCV**: Manipulação de imagens, incluindo captura de frames e detecção de placas.
+
+## 🚀 Como Usar
+
+### 1️⃣ Instalação
+
+**Clone o repositório:**
+```bash
+git clone <URL_do_repositorio>
+cd Detecção_OCR_placas```
+```
+**Instale as dependências:**
+
+```bash
+pip install -r requirements.txt
+```
+### 2️⃣ Iniciar o Servidor
+**Para iniciar o servidor, execute:**
+
+```bash
+python servidor.py
+```
+O servidor estará agora aguardando os frames enviados pelo cliente para processamento.
+
+### 3️⃣ Iniciar o Cliente
+**Para enviar frames do cliente para o servidor, execute:**
+
+```bash
+python cliente.py
+```
+O cliente captura os frames da câmera e os envia para o servidor. O servidor retorna os dados extraídos das placas.
+
+### 4️⃣ Resultado
+Após a detecção e OCR, os resultados serão exibidos no console e também serão salvos em pastas específicas:
+```
+full_frames/: Imagens completas da detecção de placa.
+```
+```
+plates/: Imagens com as placas destacadas (Região de Interesse).
+```
