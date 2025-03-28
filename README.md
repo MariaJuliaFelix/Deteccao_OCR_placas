@@ -2,6 +2,21 @@
 
 Este projeto implementa um sistema de **detecção e OCR** (Reconhecimento Óptico de Caracteres) de placas veiculares usando um **servidor** e **cliente** conectados via **gRPC**. O cliente envia frames capturados de uma câmera para o servidor, que processa as imagens, detecta as placas, realiza OCR para extrair os caracteres e valida o tipo de placa. O servidor então serializa os dados extraídos e os envia de volta ao cliente.
 
+## 🚀 Tecnologias Utilizadas
+
+- **gRPC**: Comunicação cliente-servidor eficiente e de baixo custo.
+- **Protocol Buffers**: Serialização de dados entre o cliente e o servidor.
+- **EasyOCR**: Biblioteca para OCR, usada para extrair os caracteres das placas detectadas.
+- **OpenCV**: Manipulação de imagens, incluindo captura de frames e detecção de placas.
+
+
+## 📊 Dataset e Treinamento
+
+O **dataset** utilizado foi criado por nós mesmos, visando melhorar a acurácia e robustez da detecção de placas. O processo de treinamento envolveu a coleta de imagens variadas de placas de veículos, considerando diferentes ângulos e condições de iluminação. Utilizamos técnicas de anotação para identificar as regiões das placas e os caracteres presentes em cada uma delas.
+
+O **modelo treinado** foi otimizado para detectar placas com alta precisão e realizar o OCR de maneira eficiente.
+
+
 ## Arquitetura
 
 ### Cliente
@@ -23,19 +38,6 @@ Este projeto implementa um sistema de **detecção e OCR** (Reconhecimento Ópti
   
 - **Envio de Resultados**:
   - Serializa as informações extraídas (placa, tipo e dados) e envia de volta ao cliente.
-
-## 📊 Dataset e Treinamento
-
-O **dataset** utilizado foi criado por nós mesmos, visando melhorar a acurácia e robustez da detecção de placas. O processo de treinamento envolveu a coleta de imagens variadas de placas de veículos, considerando diferentes ângulos e condições de iluminação. Utilizamos técnicas de anotação para identificar as regiões das placas e os caracteres presentes em cada uma delas.
-
-O **modelo treinado** foi otimizado para detectar placas com alta precisão e realizar o OCR de maneira eficiente.
-
-## 🚀 Tecnologias Utilizadas
-
-- **gRPC**: Comunicação cliente-servidor eficiente e de baixo custo.
-- **Protocol Buffers**: Serialização de dados entre o cliente e o servidor.
-- **EasyOCR**: Biblioteca para OCR, usada para extrair os caracteres das placas detectadas.
-- **OpenCV**: Manipulação de imagens, incluindo captura de frames e detecção de placas.
 
 ## 🚀 Como Usar
 
